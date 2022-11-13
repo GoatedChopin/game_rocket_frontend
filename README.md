@@ -1,4 +1,6 @@
-Game Rocket is a crowdsourced recommendation algorithm for video games using natural language processing (i.e., sentiment analysis and word2vec topic modeling) to recommend games based on a variety of common game descriptors. This repo is a frontend web application which speaks to the backend recommender API to allow for non-programmers to access its recommendations more easily.
+# Game Rocket 
+
+A crowdsourced recommendation algorithm for video games using natural language processing (i.e., sentiment analysis and word2vec topic modeling) to recommend games based on a variety of common game descriptors. This repo is a frontend web application which speaks to the backend recommender API to allow for non-programmers to access its recommendations more easily.
 
 Although I plan to host this site at a permanent domain in the near future, here are some screenshots detailing the general layout:
 
@@ -7,6 +9,8 @@ Although I plan to host this site at a permanent domain in the near future, here
 Users input their preferences using two dropdown boxes, and two checkboxes. When they click the, "Find Reviews" button, the application makes a POST request to the Game Rocket /recommend/ endpoint (built using Rust (Diesel and Rocket) and PostgreSQL (see https://github.com/GoatedChopin/game_rocket for more details).
 
 ![image](https://user-images.githubusercontent.com/85979611/201507249-b562b1dc-1081-48b9-bba4-0ac7dad7e952.png)
+
+As you should be able to see, each review corresponds to a score (in the top left pink bubbles, higher is better), and has a steam icon which links to the Steam store page for the game in question. Some links don't work properly, but that's due to Steam moving Game ID's around, which is bad database management, in my opinion. Of course, Steam's parent company, Valve, is worth 7.7 billion dollars at time of writing, so they probably don't need to be listening to me.
 
 The details below are for ease of use in testing and deploying. Cheers!
 

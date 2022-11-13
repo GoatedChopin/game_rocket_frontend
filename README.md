@@ -6,7 +6,7 @@ Although I plan to host this site at a permanent domain in the near future, here
 
 ![image](https://user-images.githubusercontent.com/85979611/201507223-66ecbf7b-b2cf-4438-984c-252968a62168.png)
 
-Users input their preferences using two dropdown boxes, and two checkboxes. When they click the, "Find Reviews" button, the application makes a POST request to the Game Rocket /recommend/ endpoint (built using Rust (Diesel and Rocket) and PostgreSQL (see https://github.com/GoatedChopin/game_rocket for more details).
+Users input their preferences using two dropdown boxes, and two checkboxes. When they click the, "Find Reviews" button, the application makes a POST request to the Game Rocket /recommend/ endpoint built using Rust (Diesel and Rocket) and PostgreSQL (see https://github.com/GoatedChopin/game_rocket for more details).
 
 ![image](https://user-images.githubusercontent.com/85979611/201507249-b562b1dc-1081-48b9-bba4-0ac7dad7e952.png)
 

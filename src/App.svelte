@@ -11,7 +11,5 @@
 	<Title />
 	<AboutUs />
 	<KeywordDropdown />
-	<FeedbackForm />
-	<FeedbackStats />
 	<FeedbackList />
 </main>

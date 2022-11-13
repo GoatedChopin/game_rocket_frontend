@@ -73,3 +73,5 @@ export const GameAttributes = readable([
   'tactical',
   'polished'
 ])
+
+export const GameReviews = writable([])

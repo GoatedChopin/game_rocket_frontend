@@ -2,8 +2,8 @@
 
   <script>
     import MultiSelect from 'svelte-multiselect'
-    import { empty } from 'svelte/internal';
-    import {GameAttributes} from '../stores'
+    // import { empty } from 'svelte/internal';
+    import {GameReviews} from '../stores'
     const attrs = [
                 'fun',
                 'story',
@@ -64,46 +64,38 @@
     let negatives_selected = []
     let sentiment = true
     let recommendation = true
-    let game_rocket_api = 'https://api.gamerocket.com/recommend' //'https://httpbin.org/post'
+    let game_rocket_api = 'https://api.gamerocket.com/recommend'
     let result = null
 
     function addOption(opt, array) {
         array.push(opt)
     }
 
-    // function removeOption(opt, array) {
-    //     var i = 0
-    //     while (i < array.length) {
-    //         if (arr[i] === opt) {
-    //         arr.splice(i, 1)
-    //         } else {
-    //         ++i
-    //         }
-    //     }
-    //     // return arr;
-    // }
-
     function emptyArray(array) {
         array = []
     }
 
     async function doPost () {
-        // console.log(positives_selected, negatives_selected)
-		const res = await fetch('https://httpbin.org/post', {
-			method: 'POST',
-			body: JSON.stringify({
-                "n_reviews": 5,
-				"positives": positives_selected,
-				"negatives": negatives_selected,
-                "author_recommended_game": recommendation,
-                "sentiment": sentiment
-			})
+      const res = await fetch('http://127.0.0.1:8000/recommend/', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({
+                  "n_reviews": 5,
+                  "positives": positives_selected,
+                  "negatives": negatives_selected,
+                  "author_recommended_game": recommendation,
+                  "sentiment": sentiment
+        })
 		})
 		
 		const json = await res.json()
+    console.log(json)
 		result = JSON.stringify(json)
-        console.log(result)
-	}
+    console.log(result)
+    GameReviews.update((currentFeedback) => {
+          return json
+      })
+	  }
   </script>
   
   <p>Qualities you want?</p>
@@ -144,7 +136,6 @@
         </button>
     </p>
   </header>
-
 
   <style>
     header {

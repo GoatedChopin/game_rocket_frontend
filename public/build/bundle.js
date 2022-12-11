@@ -5722,31 +5722,31 @@ var app = (function () {
     			p4 = element("p");
     			p4.textContent = "Find Reviews";
     			attr_dev(p0, "class", "svelte-14euc0r");
-    			add_location(p0, file$3, 100, 2, 2755);
+    			add_location(p0, file$3, 101, 2, 2807);
     			set_style(div, "display", "contents");
     			set_style(div, "--sms-options-bg", "#333");
-    			add_location(br0, file$3, 110, 2, 3191);
+    			add_location(br0, file$3, 111, 2, 3243);
     			attr_dev(p1, "class", "svelte-14euc0r");
-    			add_location(p1, file$3, 111, 2, 3199);
+    			add_location(p1, file$3, 112, 2, 3251);
     			set_style(div_1, "display", "contents");
     			set_style(div_1, "--sms-options-bg", "#333");
-    			add_location(br1, file$3, 122, 2, 3647);
+    			add_location(br1, file$3, 123, 2, 3699);
     			attr_dev(input0, "type", "checkbox");
-    			add_location(input0, file$3, 125, 4, 3701);
+    			add_location(input0, file$3, 126, 4, 3753);
     			attr_dev(p2, "class", "svelte-14euc0r");
-    			add_location(p2, file$3, 123, 2, 3655);
+    			add_location(p2, file$3, 124, 2, 3707);
     			attr_dev(input1, "type", "checkbox");
-    			add_location(input1, file$3, 129, 4, 3827);
+    			add_location(input1, file$3, 130, 4, 3879);
     			attr_dev(p3, "class", "svelte-14euc0r");
-    			add_location(p3, file$3, 127, 2, 3759);
+    			add_location(p3, file$3, 128, 2, 3811);
     			attr_dev(p4, "class", "svelte-14euc0r");
-    			add_location(p4, file$3, 134, 12, 3957);
+    			add_location(p4, file$3, 135, 12, 4009);
     			attr_dev(button, "class", "svelte-14euc0r");
-    			add_location(button, file$3, 133, 8, 3917);
+    			add_location(button, file$3, 134, 8, 3969);
     			attr_dev(p5, "class", "svelte-14euc0r");
-    			add_location(p5, file$3, 132, 4, 3904);
+    			add_location(p5, file$3, 133, 4, 3956);
     			attr_dev(header, "class", "svelte-14euc0r");
-    			add_location(header, file$3, 131, 2, 3890);
+    			add_location(header, file$3, 132, 2, 3942);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -5942,7 +5942,9 @@ var app = (function () {
     	let result = null;
 
     	async function doPost() {
-    		const res = await fetch('https://3.80.214.160:8000/recommend', {
+    		console.log("Sending POST request to API");
+
+    		const res = await fetch('http://3.80.214.160:8000/recommend', {
     			method: 'POST',
     			headers: { 'Content-Type': 'application/json' },
     			body: JSON.stringify({
@@ -5957,8 +5959,8 @@ var app = (function () {
     		const json = await res.json();
     		console.log(json);
     		result = JSON.stringify(json);
-    		console.log(result);
 
+    		// console.log(result)
     		GameReviews.update(currentFeedback => {
     			return json;
     		});

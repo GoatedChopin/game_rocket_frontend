@@ -76,7 +76,8 @@
     }
 
     async function doPost () {
-      const res = await fetch('https://3.80.214.160:8000/recommend', {
+      console.log("Sending POST request to API")
+      const res = await fetch('http://3.80.214.160:8000/recommend', {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({
@@ -91,7 +92,7 @@
 		const json = await res.json()
     console.log(json)
 		result = JSON.stringify(json)
-    console.log(result)
+    // console.log(result)
     GameReviews.update((currentFeedback) => {
           return json
       })

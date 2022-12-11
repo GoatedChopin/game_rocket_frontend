@@ -76,7 +76,7 @@
     }
 
     async function doPost () {
-      const res = await fetch('http://127.0.0.1:8000/recommend/', {
+      const res = await fetch('https://3.80.214.160:8000/recommend', {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({

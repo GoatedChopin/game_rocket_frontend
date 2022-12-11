@@ -1,5 +1,9 @@
 # Game Rocket 
 
+Currently lives at [http://game-rocket-frontend.vercel.app](http://game-rocket-frontend.vercel.app)
+
+Note: Your browser probably enables _https_ by default, which is not currently supported by this project's stack. You may have to disable https for the requests to the backend API to function properly. HTTPS support is on its way, don't worry.
+
 A crowdsourced recommendation algorithm for video games using natural language processing (i.e., sentiment analysis and word2vec topic modeling) to recommend games based on a variety of common game descriptors. This repo is a frontend web application which speaks to the backend recommender API to allow for non-programmers to access its recommendations more easily.
 
 Although I plan to host this site at a permanent domain in the near future, here are some screenshots detailing the general layout:
